@@ -37,7 +37,7 @@ def _parse(value, function, fmt):
     with message `fmt.format(e)`, where `e` is the caught `ValueError`.
     """
     try:
-        return function(value)
+        return function(float(value))
     except ValueError as e:
         raise_from(ValueError(fmt.format(e)), None)
 
